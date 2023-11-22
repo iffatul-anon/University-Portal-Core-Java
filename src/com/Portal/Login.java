@@ -8,14 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//class Verify {
-//    String username;
-//    String password;
-//    Verify(String username,String password){
-//        this.username = username;
-//        this.password = password;
-//    }
-//}
 public class Login {
 
     String username;

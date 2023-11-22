@@ -16,7 +16,7 @@ Students can view their result for every courses in one place. They also check t
 Both users can view and update their profile and password.
 
 ## Features
-DIU Portal mainly have two parts
+This University Portal mainly have two parts
 
 * Faculty Portal
 

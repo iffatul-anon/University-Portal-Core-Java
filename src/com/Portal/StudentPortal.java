@@ -42,22 +42,21 @@ public class StudentPortal {
             System.out.println("6. Logout\n\n");
             System.out.print("Select an option: ");
 
-            try (Scanner scanner = new Scanner(System.in)) {
-                int option = scanner.nextInt();
+            Scanner scanner = new Scanner(System.in);
+            int option = scanner.nextInt();
 
-                if (option == 1) {
-                    Profile.profile("Student",userID);
-                } else if (option == 2) {
-                    Profile.update("Student",userID);
-                } else if (option == 3) {
-                    //passwordChange("Student",userID);
-                } else if (option == 4) {
-                    //result();
-                } else if (option == 5) {
-                    //paymentLedger();
-                } else if (option == 6) {
-                    return;
-                }
+            if (option == 1) {
+                Profile.profile("Student",userID);
+            } else if (option == 2) {
+                Profile.update("Student",userID);
+            } else if (option == 3) {
+                //passwordChange("Student",userID);
+            } else if (option == 4) {
+                //result();
+            } else if (option == 5) {
+                //paymentLedger();
+            } else if (option == 6) {
+                return;
             }
         }
     }
