@@ -26,36 +26,32 @@ public class Login {
         String username = scan.nextLine();
         System.out.print("Enter Your Password: ");
         String password = scan.next();
-        boolean flag=true;
+        boolean flag = true;
 
         BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(usertype + "Password.csv"));
-            {
-                String data = br.readLine();
-                while (data != null) {
-                    String[] datapart= data.split(",");
-                    Login user = new Login(datapart[0], datapart[1]);
-                    users.add(user);
-                    data = br.readLine();
-                }
+        br = new BufferedReader(new FileReader(usertype + "Password.csv"));
+        {
+            String data = br.readLine();
+            while (data != null) {
+                String[] datapart = data.split(",");
+                Login user = new Login(datapart[0], datapart[1]);
+                users.add(user);
+                data = br.readLine();
             }
-            for (Login user : users) {
-                if (user.username.equals(username) && user.password.equals(password)) {
-                    if(usertype.equals("Student")) StudentPortal.studentDashboard(username);
-                    if(usertype.equals("Faculty")) FacultyPortal.facultyDashboard(username);
-                    flag=false;
-                    break;
-                }
-            }
-            if(flag) {
-                System.out.println("Invalid username or password");
-                System.out.print("\n\nPress Enter to continue...");
-                new Scanner(System.in).nextLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
         br.close();
+        for (Login user : users) {
+            if (user.username.equals(username) && user.password.equals(password)) {
+                if (usertype.equals("Student")) StudentPortal.studentDashboard(username);
+                if (usertype.equals("Faculty")) FacultyPortal.facultyDashboard(username);
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            System.out.println("Invalid username or password");
+            System.out.print("\n\nPress Enter to continue...");
+            new Scanner(System.in).nextLine();
+        }
     }
 }

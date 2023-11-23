@@ -30,7 +30,7 @@ public class Result {
             System.out.print("Select:");
             Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
-            if(option==2){
+            if (option == 2) {
                 break;
             }
             System.out.println("|| Result ||\n");
@@ -38,34 +38,31 @@ public class Result {
             File file = new File("Result.csv");
 
             BufferedReader br = null;
-            try {
-                br = new BufferedReader(new FileReader(file));
-                {
-                    String data = br.readLine();
-                    while (data != null) {
-                        String[] datapart = data.split(",");
-                        Result user = new Result(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4]);
-                        users.add(user);
-                        data = br.readLine();
-                    }
+
+            br = new BufferedReader(new FileReader(file));
+            {
+                String data = br.readLine();
+                while (data != null) {
+                    String[] datapart = data.split(",");
+                    Result user = new Result(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4]);
+                    users.add(user);
+                    data = br.readLine();
                 }
-                System.out.print("\nID:");
-                String input = scan.nextLine();
-                for (Result user : users) {
-                    if (user.userID.equals(input)) {
-                        System.out.println("ID :" + user.userID);
-                        System.out.println("Object Oriented Design :" + "\t" + user.course1);
-                        System.out.println("Object Oriented Lab :" + "\t" +  user.course2);
-                        System.out.println("Database Management :" + "\t" +  user.course3);
-                        System.out.println("Database Management Lab :" + "\t" +  user.course4);
-                    }
-                }
-                System.out.print("\nPress Enter to continue...");
-                new Scanner(System.in).nextLine();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
             br.close();
+            System.out.print("\nID:");
+            String input = scan.nextLine();
+            for (Result user : users) {
+                if (user.userID.equals(input)) {
+                    System.out.println("ID :" + user.userID);
+                    System.out.println("Object Oriented Design :" + "\t" + user.course1);
+                    System.out.println("Object Oriented Lab :" + "\t" + user.course2);
+                    System.out.println("Database Management :" + "\t" + user.course3);
+                    System.out.println("Database Management Lab :" + "\t" + user.course4);
+                }
+            }
+            System.out.print("\nPress Enter to continue...");
+            new Scanner(System.in).nextLine();
         }
     }
 }

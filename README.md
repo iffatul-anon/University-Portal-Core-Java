@@ -9,11 +9,13 @@
 
 ### Concept
 
-The portal will help faculty members to easily add mark in every courses and  see result of all students in the course.
+Users can log in using password.
 
-Students can view their result for every courses in one place. They also check their semester fee based on their result and waiver.
+Users can view and update their profile and password.
 
-Both users can view and update their profile and password.
+The portal will help faculty members to easily add mark in the course and  see result of all students in the course.
+
+Students can view their result for every course in one place.
 
 ## Features
 This University Portal mainly have two parts

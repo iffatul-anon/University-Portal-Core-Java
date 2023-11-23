@@ -34,12 +34,15 @@ public class Main {
         }
     }
 
-    static void clearScreen() {
+    static void clearScreen() throws IOException {
         String os = System.getProperty("os.name").toLowerCase();
-        try {
             if (os.contains("win")) {
                 // For Windows
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                try {
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             } else if (os.contains("nix") || os.contains("nux") || os.contains("mac")) {
                 // For Unix-like systems (Linux, macOS)
                 System.out.print("\033[H\033[2J");
@@ -48,8 +51,5 @@ public class Main {
                 // Unsupported or unknown operating system
                 System.out.println("Clear screen not supported on this operating system.");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
