@@ -50,7 +50,7 @@ public class StudentPortal {
             } else if (option == 2) {
                 Profile.update("Student",userID);
             } else if (option == 3) {
-                //passwordChange("Student",userID);
+                PasswordUpdate.change("Student",userID);
             } else if (option == 4) {
                 //result();
             } else if (option == 5) {

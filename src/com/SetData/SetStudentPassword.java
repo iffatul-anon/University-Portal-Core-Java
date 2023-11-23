@@ -19,7 +19,6 @@ public class SetStudentPassword {
         String password = scan.nextLine();
 
         try {
-            //file.createNewFile();
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
             writer.write(username + "," + password + "\n");
             writer.close();

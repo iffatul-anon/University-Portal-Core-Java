@@ -21,7 +21,6 @@ public class SetStudentWaiver {
         double requiredSGPA = scan.nextDouble();
 
         try {
-            //file.createNewFile();
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
             writer.write(username + "," + waiver + "," + requiredSGPA + "\n");
             writer.close();
