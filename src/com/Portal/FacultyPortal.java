@@ -12,9 +12,8 @@ public class FacultyPortal {
             System.out.println("1. Profile");
             System.out.println("2. Profile Update");
             System.out.println("3. Password Change");
-            System.out.println("4. Mark Input:");
-            System.out.println("5. Result Show:");
-            System.out.println("6. Logout\n");
+            System.out.println("4. Courses:");
+            System.out.println("5. Logout\n");
             System.out.print("Select an option: ");
 
             Scanner scanner = new Scanner(System.in);
@@ -27,18 +26,10 @@ public class FacultyPortal {
             } else if (option == 3) {
                 PasswordUpdate.change("Faculty",userID);
             } else if (option == 4) {
-                markInput();
+                Courses.courses(userID);
             } else if (option == 5) {
-                resultShow();
-            } else if (option == 6) {
                 return;
             }
         }
-    }
-    static void markInput(){
-
-    }
-    static void resultShow(){
-
     }
 }

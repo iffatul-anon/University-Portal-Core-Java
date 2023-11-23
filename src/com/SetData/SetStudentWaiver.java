@@ -11,7 +11,7 @@ public class SetStudentWaiver {
 
         Scanner scan = new Scanner(System.in);
 
-        File file = new File("StudentWaiver.csv");
+        File file = new File("Result.csv");
 
         System.out.print("Enter your username: ");
         String username = scan.nextLine();
