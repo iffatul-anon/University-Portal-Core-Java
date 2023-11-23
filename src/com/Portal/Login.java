@@ -44,7 +44,7 @@ public class Login {
             for (Login user : users) {
                 if (user.username.equals(username) && user.password.equals(password)) {
                     if(usertype.equals("Student")) StudentPortal.studentDashboard(username);
-                    //if(usertype.equals("Faculty")) FacultyPortal.facultyDashboard(username);
+                    if(usertype.equals("Faculty")) FacultyPortal.facultyDashboard(username);
                     flag=false;
                     break;
                 }
