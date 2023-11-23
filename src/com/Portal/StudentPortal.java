@@ -52,13 +52,19 @@ public class StudentPortal {
             } else if (option == 3) {
                 PasswordUpdate.change("Student",userID);
             } else if (option == 4) {
-                //result();
+                result();
             } else if (option == 5) {
-                //paymentLedger();
+                paymentLedger();
             } else if (option == 6) {
                 return;
             }
         }
+    }
+    static void result(){
+
+    }
+    static void paymentLedger(){
+
     }
 }
 

@@ -2,7 +2,6 @@ package com.Portal;
 
 import java.io.*;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ public class Profile {
     static void profile(String userType , String username) throws IOException {
         Main.clearScreen();
         System.out.println("\n\n||" + userType + " Portal ||\n");
-        System.out.println("|| Profile ||\n\n");
+        System.out.println("|| Profile ||\n");
 
         ArrayList<Profile> users = new ArrayList<>();
         File file = new File(userType +"Information.csv");
@@ -48,36 +47,39 @@ public class Profile {
 
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader(file));
-            {
-                String data = br.readLine();
-                while (data != null) {
-                    String[] datapart= data.split(",");
-                    Profile user = new Profile(datapart[0],datapart[1],datapart[2],datapart[3],datapart[4],datapart[5],datapart[6], datapart[7],datapart[8],datapart[9]);
-                    users.add(user);
-                    data = br.readLine();
+            if(file.length() != 0) {
+                br = new BufferedReader(new FileReader(file));
+                {
+                    String data = br.readLine();
+                    while (data != null) {
+                        String[] datapart = data.split(",");
+                        Profile user = new Profile(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4], datapart[5], datapart[6], datapart[7], datapart[8], datapart[9]);
+                        users.add(user);
+                        data = br.readLine();
+                    }
                 }
-            }
-            for (Profile user : users) {
-                if (user.username.equals(username)) {
-                    System.out.println("ID:" + user.username);
-                    System.out.println("Name:" + user.name);
-                    System.out.println("Department:" + user.department);
-                    System.out.println("DateOfBirth:" + user.dateOfBirth);
-                    System.out.println("Father Name:" + user.fatherName);
-                    System.out.println("Mother Name:" + user.motherName);
-                    System.out.println("Blood Group:" + user.bloodGroup);
-                    System.out.println("Phone:" + user.phone);
-                    System.out.println("E-mail:" + user.email);
-                    System.out.println("Address:" + user.address);
-                    flag=false;
-                    break;
+
+                for (Profile user : users) {
+                    if (user.username.equals(username)) {
+                        System.out.println("ID:" + user.username);
+                        System.out.println("Name:" + user.name);
+                        System.out.println("Department:" + user.department);
+                        System.out.println("DateOfBirth:" + user.dateOfBirth);
+                        System.out.println("Father Name:" + user.fatherName);
+                        System.out.println("Mother Name:" + user.motherName);
+                        System.out.println("Blood Group:" + user.bloodGroup);
+                        System.out.println("Phone:" + user.phone);
+                        System.out.println("E-mail:" + user.email);
+                        System.out.println("Address:" + user.address);
+                        flag = false;
+                        break;
+                    }
                 }
             }
             if(flag) {
                 System.out.println("Please Update Your Profile");
             }
-            System.out.print("\n\nPress Enter to continue...");
+            System.out.print("\nPress Enter to continue...");
             new Scanner(System.in).nextLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -87,28 +89,31 @@ public class Profile {
 
     static void update(String userType, String userID) throws IOException {
         Main.clearScreen();
-        System.out.println("\n\n||" + userType + " Portal ||\n\n");
-        System.out.println("|| Profile Update ||\n\n\n");
+        System.out.println("\n\n||" + userType + " Portal ||\n");
+        System.out.println("|| Profile Update ||\n");
 
         Scanner scan = new Scanner(System.in);
         ArrayList<Profile> users = new ArrayList<>();
         File file = new File(userType +"Information.csv");
 
+//        Profile title = new Profile("ID", "Name", "Department", "DateOfBirth", "FatherName", "MotherName", "BloodGroup", "Phone", "E-mail", "Address");
+//        users.add(title);
+
         boolean flag=true;
 
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader(file));
-            {
-                String data = br.readLine();
-                while (data != null) {
-                    String[] datapart= data.split(",");
-                    Profile user = new Profile(datapart[0],datapart[1],datapart[2],datapart[3],datapart[4],datapart[5],datapart[6], datapart[7],datapart[8],datapart[9]);
-                    users.add(user);
-                    data = br.readLine();
+            if(file.length() != 0) {
+                br = new BufferedReader(new FileReader(file));
+                {
+                    String data = br.readLine();
+                    while (data != null) {
+                        String[] datapart = data.split(",");
+                        Profile user = new Profile(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4], datapart[5], datapart[6], datapart[7], datapart[8], datapart[9]);
+                        users.add(user);
+                        data = br.readLine();
+                    }
                 }
-            }
-            if(!users.isEmpty()) {
                 for (Profile user : users) {
                     if (user.username.equals(userID)) {
                         while (true) {

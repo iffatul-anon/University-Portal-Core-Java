@@ -26,10 +26,9 @@ This University Portal mainly have two parts
 1. Profile
 2. Profile Update
 3. Password Change
-4. Courses 
-4. * Mark Entry
-4. * Result
-5. Logout
+4. Mark Input
+5. Result Show
+6. Logout
 
 
 #### Student Portal

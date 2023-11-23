@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class FacultyPortal {
-    public static void facultyDashboard(String userID) throws IOException {
+    static void facultyDashboard(String userID) throws IOException {
         while (true) {
             Main.clearScreen();
             System.out.println("\n\n|| Faculty Portal ||\n\n");
@@ -27,12 +27,18 @@ public class FacultyPortal {
             } else if (option == 3) {
                 PasswordUpdate.change("Faculty",userID);
             } else if (option == 4) {
-                //markInput();
+                markInput();
             } else if (option == 5) {
-                //resultShow();
+                resultShow();
             } else if (option == 6) {
                 return;
             }
         }
+    }
+    static void markInput(){
+
+    }
+    static void resultShow(){
+
     }
 }
