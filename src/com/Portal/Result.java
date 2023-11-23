@@ -37,15 +37,15 @@ public class Result {
             ArrayList<Result> users = new ArrayList<>();
             File file = new File("Result.csv");
 
-            BufferedReader br = null;
-
-            br = new BufferedReader(new FileReader(file));
+            BufferedReader br = new BufferedReader(new FileReader(file));
             {
                 String data = br.readLine();
                 while (data != null) {
                     String[] datapart = data.split(",");
-                    Result user = new Result(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4]);
-                    users.add(user);
+                    if(datapart.length>=5) {
+                        Result user = new Result(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4]);
+                        users.add(user);
+                    }
                     data = br.readLine();
                 }
             }
@@ -56,8 +56,8 @@ public class Result {
                 if (user.userID.equals(input)) {
                     System.out.println("ID :" + user.userID);
                     System.out.println("Object Oriented Design :" + "\t" + user.course1);
-                    System.out.println("Object Oriented Lab :" + "\t" + user.course2);
-                    System.out.println("Database Management :" + "\t" + user.course3);
+                    System.out.println("Object Oriented Lab :" + "\t\t" + user.course2);
+                    System.out.println("Database Management :" + "\t\t" + user.course3);
                     System.out.println("Database Management Lab :" + "\t" + user.course4);
                 }
             }

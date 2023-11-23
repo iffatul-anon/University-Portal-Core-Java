@@ -7,7 +7,7 @@ public class FacultyPortal {
     static void facultyDashboard(String userID) throws IOException {
         while (true) {
             Main.clearScreen();
-            System.out.println("\n\n|| Faculty Portal ||\n\n");
+            System.out.println("\n\n|| Faculty Portal ||\n");
             System.out.println("ID: " + userID + "\n");
             System.out.println("1. Profile");
             System.out.println("2. Profile Update");

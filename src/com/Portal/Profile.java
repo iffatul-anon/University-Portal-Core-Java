@@ -45,34 +45,33 @@ public class Profile {
 
         boolean flag = true;
 
-        BufferedReader br = null;
-        if (file.length() != 0) {
-            br = new BufferedReader(new FileReader(file));
-            {
-                String data = br.readLine();
-                while (data != null) {
-                    String[] datapart = data.split(",");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        {
+            String data = br.readLine();
+            while (data != null) {
+                String[] datapart = data.split(",");
+                if(datapart.length>=10) {
                     Profile user = new Profile(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4], datapart[5], datapart[6], datapart[7], datapart[8], datapart[9]);
                     users.add(user);
-                    data = br.readLine();
                 }
+                data = br.readLine();
             }
-            br.close();
-            for (Profile user : users) {
-                if (user.username.equals(username)) {
-                    System.out.println("ID:" + user.username);
-                    System.out.println("Name:" + user.name);
-                    System.out.println("Department:" + user.department);
-                    System.out.println("DateOfBirth:" + user.dateOfBirth);
-                    System.out.println("Father Name:" + user.fatherName);
-                    System.out.println("Mother Name:" + user.motherName);
-                    System.out.println("Blood Group:" + user.bloodGroup);
-                    System.out.println("Phone:" + user.phone);
-                    System.out.println("E-mail:" + user.email);
-                    System.out.println("Address:" + user.address);
-                    flag = false;
-                    break;
-                }
+        }
+        br.close();
+        for (Profile user : users) {
+            if (user.username.equals(username)) {
+                System.out.println("ID:" + user.username);
+                System.out.println("Name:" + user.name);
+                System.out.println("Department:" + user.department);
+                System.out.println("DateOfBirth:" + user.dateOfBirth);
+                System.out.println("Father Name:" + user.fatherName);
+                System.out.println("Mother Name:" + user.motherName);
+                System.out.println("Blood Group:" + user.bloodGroup);
+                System.out.println("Phone:" + user.phone);
+                System.out.println("E-mail:" + user.email);
+                System.out.println("Address:" + user.address);
+                flag = false;
+                break;
             }
         }
         if (flag) {
@@ -93,83 +92,82 @@ public class Profile {
 
         boolean flag = true;
 
-        BufferedReader br = null;
-        if (file.length() != 0) {
-            br = new BufferedReader(new FileReader(file));
-            {
-                String data = br.readLine();
-                while (data != null) {
-                    String[] datapart = data.split(",");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        {
+            String data = br.readLine();
+            while (data != null) {
+                String[] datapart = data.split(",");
+                if(datapart.length>=10) {
                     Profile user = new Profile(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4], datapart[5], datapart[6], datapart[7], datapart[8], datapart[9]);
                     users.add(user);
-                    data = br.readLine();
                 }
+                data = br.readLine();
             }
-            br.close();
-            for (Profile user : users) {
-                if (user.username.equals(userID)) {
-                    while (true) {
-                        System.out.println("Which option would you like to edit?");
-                        System.out.println("1. Name:" + user.name);
-                        System.out.println("2. DateOfBirth:" + user.dateOfBirth);
-                        System.out.println("3. Father Name:" + user.fatherName);
-                        System.out.println("4. Mother Name:" + user.motherName);
-                        System.out.println("5. Blood Group:" + user.bloodGroup);
-                        System.out.println("6. Phone:" + user.phone);
-                        System.out.println("7. E-mail:" + user.email);
-                        System.out.println("8. Address:" + user.address);
-                        System.out.println("9. Back:");
+        }
+        br.close();
+        for (Profile user : users) {
+            if (user.username.equals(userID)) {
+                while (true) {
+                    System.out.println("Which option would you like to edit?");
+                    System.out.println("1. Name:" + user.name);
+                    System.out.println("2. DateOfBirth:" + user.dateOfBirth);
+                    System.out.println("3. Father Name:" + user.fatherName);
+                    System.out.println("4. Mother Name:" + user.motherName);
+                    System.out.println("5. Blood Group:" + user.bloodGroup);
+                    System.out.println("6. Phone:" + user.phone);
+                    System.out.println("7. E-mail:" + user.email);
+                    System.out.println("8. Address:" + user.address);
+                    System.out.println("9. Back:");
 
-                        System.out.print("\nEnter: ");
-                        int option = scan.nextInt();
+                    System.out.print("\nEnter: ");
+                    int option = scan.nextInt();
 
-                        Scanner scanner = new Scanner(System.in);
+                    Scanner scanner = new Scanner(System.in);
 
-                        if (option == 9) {
-                            break;
-                        }
-
-                        if (option == 1) {
-                            System.out.print("\nName:");
-                            user.name = scanner.nextLine();
-                        }
-                        if (option == 2) {
-                            System.out.print("\nDateOfBirth:");
-                            user.dateOfBirth = scanner.nextLine();
-                        }
-                        if (option == 3) {
-                            System.out.print("\nFather Name:");
-                            user.fatherName = scanner.nextLine();
-                        }
-                        if (option == 4) {
-                            System.out.print("\nMother Name:");
-                            user.motherName = scanner.nextLine();
-                        }
-                        if (option == 5) {
-                            System.out.print("\nBlood Group:");
-                            user.bloodGroup = scanner.nextLine();
-                        }
-                        if (option == 6) {
-                            System.out.print("\nPhone:");
-                            user.phone = scanner.nextLine();
-                        }
-                        if (option == 7) {
-                            System.out.print("\nE-mail:");
-                            user.email = scanner.nextLine();
-                        }
-                        if (option == 8) {
-                            System.out.print("\nAddress:");
-                            user.address = scanner.nextLine();
-                        }
+                    if (option == 9) {
+                        break;
                     }
-                    flag = false;
-                    BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-                    for (Profile user2 : users) {
-                        writer.write(user2.username + "," + user2.name + "," + user2.department + "," + user2.dateOfBirth + "," + user2.fatherName + "," + user2.motherName + "," + user2.bloodGroup + "," + user2.phone + "," + user2.email + "," + user2.address + "\n");
+
+                    if (option == 1) {
+                        System.out.print("\nName:");
+                        user.name = scanner.nextLine();
                     }
-                    writer.close();
-                    break;
+                    if (option == 2) {
+                        System.out.print("\nDateOfBirth:");
+                        user.dateOfBirth = scanner.nextLine();
+                    }
+                    if (option == 3) {
+                        System.out.print("\nFather Name:");
+                        user.fatherName = scanner.nextLine();
+                    }
+                    if (option == 4) {
+                        System.out.print("\nMother Name:");
+                        user.motherName = scanner.nextLine();
+                    }
+                    if (option == 5) {
+                        System.out.print("\nBlood Group:");
+                        user.bloodGroup = scanner.nextLine();
+                    }
+                    if (option == 6) {
+                        System.out.print("\nPhone:");
+                        user.phone = scanner.nextLine();
+                    }
+                    if (option == 7) {
+                        System.out.print("\nE-mail:");
+                        user.email = scanner.nextLine();
+                    }
+                    if (option == 8) {
+                        System.out.print("\nAddress:");
+                        user.address = scanner.nextLine();
+                    }
                 }
+                flag = false;
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                for (Profile user2 : users) {
+                    writer.write(user2.username + "," + user2.name + "," + user2.department + "," + user2.dateOfBirth + "," + user2.fatherName + "," + user2.motherName + "," + user2.bloodGroup + "," + user2.phone + "," + user2.email + "," + user2.address + "\n");
+                }
+                writer.close();
+                break;
             }
         }
         if (flag) {

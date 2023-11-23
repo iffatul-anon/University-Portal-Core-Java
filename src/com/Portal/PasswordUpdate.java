@@ -16,8 +16,8 @@ public class PasswordUpdate {
     static void change(String userType, String userID) throws IOException {
         Main.clearScreen();
         Scanner scan = new Scanner(System.in);
-        System.out.println("\n\n||" + userType + " Portal ||\n\n");
-        System.out.println("|| Password Update ||\n\n\n");
+        System.out.println("\n\n||" + userType + " Portal ||\n");
+        System.out.println("|| Password Update ||\n\n");
         System.out.print("Enter Your Password: ");
         String input = scan.next();
         boolean flag = true;
@@ -25,15 +25,15 @@ public class PasswordUpdate {
         ArrayList<PasswordUpdate> users = new ArrayList<>();
         File file = new File(userType + "Password.csv");
 
-        BufferedReader br = null;
-
-        br = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new FileReader(file));
         {
             String data = br.readLine();
             while (data != null) {
                 String[] datapart = data.split(",");
-                PasswordUpdate user = new PasswordUpdate(datapart[0], datapart[1]);
-                users.add(user);
+                if(datapart.length>=2) {
+                    PasswordUpdate user = new PasswordUpdate(datapart[0], datapart[1]);
+                    users.add(user);
+                }
                 data = br.readLine();
             }
         }

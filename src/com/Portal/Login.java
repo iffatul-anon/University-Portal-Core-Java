@@ -21,15 +21,14 @@ public class Login {
         Scanner scan = new Scanner(System.in);
         ArrayList<Login> users = new ArrayList<>();
 
-        System.out.println("\n\n||" + usertype + "Login ||\n\n\n");
+        System.out.println("\n\n||" + usertype + "Login ||\n");
         System.out.print("Enter your ID: ");
         String username = scan.nextLine();
         System.out.print("Enter Your Password: ");
         String password = scan.next();
         boolean flag = true;
 
-        BufferedReader br = null;
-        br = new BufferedReader(new FileReader(usertype + "Password.csv"));
+        BufferedReader br = new BufferedReader(new FileReader(usertype + "Password.csv"));
         {
             String data = br.readLine();
             while (data != null) {

@@ -7,8 +7,8 @@ public class StudentPortal {
     static void studentDashboard(String userID) throws IOException {
         while (true) {
             Main.clearScreen();
-            System.out.println("\n\n|| Student Portal ||\n\n\n");
-            System.out.println("ID : " + userID + "\n\n");
+            System.out.println("\n\n|| Student Portal ||\n");
+            System.out.println("ID : " + userID + "\n");
             System.out.println("1. Profile");
             System.out.println("2. Profile Update");
             System.out.println("3. Password Change");

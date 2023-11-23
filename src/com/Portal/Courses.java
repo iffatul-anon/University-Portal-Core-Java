@@ -21,13 +21,14 @@ public class Courses {
         Main.clearScreen();
         int course = 0;
         Scanner scan = new Scanner(System.in);
-        System.out.println("\n\n|| Faculty Portal ||\n\n");
-        System.out.println("|| Courses ||\n\n\n");
+        System.out.println("\n\n|| Faculty Portal ||\n");
+        System.out.println("|| Courses ||\n");
 
         if (userID.equals("1001")) {
             System.out.println("ID: 1001");
             System.out.println("\n1. Object Oriented Design");
             System.out.println("2. Object Oriented Lab");
+            System.out.print("Select:");
             Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
             if (option == 1) {
@@ -40,6 +41,7 @@ public class Courses {
             System.out.println("ID: 1002");
             System.out.println("\n1. Object Oriented Design");
             System.out.println("2. Object Oriented Lab");
+            System.out.print("Select:");
             Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
             if (option == 1) {
@@ -52,14 +54,15 @@ public class Courses {
         ArrayList<Courses> users = new ArrayList<>();
         File file = new File("Result.csv");
 
-        BufferedReader br = null;
-        br = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new FileReader(file));
         {
             String data = br.readLine();
             while (data != null) {
                 String[] datapart = data.split(",");
-                Courses user = new Courses(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4]);
-                users.add(user);
+                if(datapart.length>=5) {
+                    Courses user = new Courses(datapart[0], datapart[1], datapart[2], datapart[3], datapart[4]);
+                    users.add(user);
+                }
                 data = br.readLine();
             }
         }
@@ -69,15 +72,16 @@ public class Courses {
             int c = 0;
             for (Courses user : users) {
                 c++;
-                if (c == 1) continue;
-                if (course == 1) {
-                    System.out.println(user.userID + "\t" + user.course1);
-                } else if (course == 2) {
-                    System.out.println(user.userID + "\t" + user.course2);
-                } else if (course == 3) {
-                    System.out.println(user.userID + "\t" + user.course3);
-                } else if (course == 4) {
-                    System.out.println(user.userID + "\t" + user.course4);
+                if (c > 1) {
+                    if (course == 1) {
+                        System.out.println(user.userID + "\t" + user.course1);
+                    } else if (course == 2) {
+                        System.out.println(user.userID + "\t" + user.course2);
+                    } else if (course == 3) {
+                        System.out.println(user.userID + "\t" + user.course3);
+                    } else if (course == 4) {
+                        System.out.println(user.userID + "\t" + user.course4);
+                    }
                 }
             }
             System.out.println("\n1. Entry:");
