@@ -1,3 +1,6 @@
 ID,Name,Department,DateOfBirth,FatherName,MotherName,BloodGroup,Phone,E-mail,Address
-88,22,11,212,11,33f,12,12,12,12312231321313
-23,gdfg,sgf,fg,l,kl,jk,hl,hj,oh
+11,Md. Iffatul Islam Anon,SWE,25-12-1999,Md. Ahmed Khan,Mst. Joba Begom,B+,01900000000,anon@diu.edu.bd,YKSG-2
+22,Iffatul Anon,SWE,25-12-2000,Md. Ahmed,Mst. Joba,AB+,01700000000,iffatul@diu.edu.bd,Mirpur
+33,Islam Anon,SWE,25-12-2001,Ahmed Khan,Joba Begom,AB-,01800000000,anon@diu.edu.bd,YKSG-1
+44,Md. Islam,SWE,25-12-2002,Ahmed Islam,Rokeya Begom,O+,01300000000,md@diu.edu.bd,Uttora
+55,Islam Anon,SWE,25-12-2003,Md. Ahmed Islam,Rokeya Islam,A+,01500000000,islam@diu.edu.bd,YKSG-2

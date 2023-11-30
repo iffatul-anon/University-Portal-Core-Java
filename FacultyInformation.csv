@@ -1,2 +1,3 @@
 ID,Name,Department,DateOfBirth,FatherName,MotherName,BloodGroup,Phone,E-mail,Address
-1001,11,11,25,11,33f,12,12,12,12312231321313
+1001,Md. Sohel Khan,SWE,25-5-1992,Md. Akram Khan,Mst. Rokey Begom,A-,01900000000,sohel@diu.edu.bd,Mirpur
+1002,Md. Anisul Islam,SWE,18-3-1995,Md. Liton Islam,Mst. Trisa Islam,B+,01700000000,anisul@diu.edu.bd,Uttora

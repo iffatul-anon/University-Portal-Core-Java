@@ -1,5 +1,4 @@
 package com.Portal;
-
 import java.io.*;
 import java.io.IOException;
 import java.util.Scanner;
@@ -36,20 +35,20 @@ public class Main {
 
     static void clearScreen() throws IOException {
         String os = System.getProperty("os.name").toLowerCase();
-            if (os.contains("win")) {
-                // For Windows
-                try {
-                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            } else if (os.contains("nix") || os.contains("nux") || os.contains("mac")) {
-                // For Unix-like systems (Linux, macOS)
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            } else {
-                // Unsupported or unknown operating system
-                System.out.println("Clear screen not supported on this operating system.");
+        if (os.contains("win")) {
+            // For Windows
+            try {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
+        } else if (os.contains("nix") || os.contains("nux") || os.contains("mac")) {
+            // For Unix-like systems (Linux, macOS)
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        } else {
+            // Unsupported or unknown operating system
+            System.out.println("Clear screen not supported on this operating system.");
+        }
     }
 }

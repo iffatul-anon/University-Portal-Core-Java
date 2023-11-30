@@ -1,5 +1,4 @@
 package com.Portal;
-
 public class Grade {
     static String gradePoint(double total) {
         String gradePoint;
